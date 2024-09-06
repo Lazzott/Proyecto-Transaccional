@@ -80,7 +80,7 @@ class Cliente {
     }
 }
 
-public class Main {
+public class AtencionClientes {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
