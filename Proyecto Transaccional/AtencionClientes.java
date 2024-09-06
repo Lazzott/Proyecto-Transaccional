@@ -43,10 +43,10 @@ public class AtencionClientes {
 
     public static void crearSublista(List<Sublista> coleccionAnidada, Scanner scanner) {
         System.out.print("Ingrese el nombre del Nuevo Area: ");
-        String nombre = scanner.nextLine();
-        Sublista nuevaSublista = new Sublista(nombre);
+        String area = scanner.nextLine();
+        Sublista nuevaSublista = new Sublista(area);
         coleccionAnidada.add(nuevaSublista);
-        System.out.println("Nuevo Area '" + nombre + "' creada.");
+        System.out.println("Nuevo Area '" + area + "' creada.");
     }
 
     public static void agregarValoresSublista(List<Sublista> coleccionAnidada, Scanner scanner) {
@@ -86,9 +86,9 @@ public class AtencionClientes {
 
     public static void mostrarColeccion(List<Sublista> coleccionAnidada) {
         if (coleccionAnidada.isEmpty()) {
-            System.out.println("La colección está vacía.");
+            System.out.println("No hay Areas Creadas");
         } else {
-            System.out.println("Listado de elementos en la colección anidada:");
+            System.out.println("Lista de Clientes Por Cada Area:");
             for (Sublista sublista : coleccionAnidada) {
                 System.out.println("Sublista '" + sublista.getArea() + "': " + sublista.getClientes());
             }
@@ -113,6 +113,5 @@ class Sublista {
         return valores;
     }
 }
-dsadsadsadasdsa
     
 
