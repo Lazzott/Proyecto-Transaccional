@@ -44,11 +44,6 @@ class Cliente {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre + ", Edad: " + edad;
-    }
 }
 
 public class AtencionClientes {
