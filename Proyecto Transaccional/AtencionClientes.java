@@ -2,6 +2,55 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+class Sublista {
+    private String area;
+    private List<Cliente> clientes;
+
+    public Sublista(String area) {
+        this.area = area;
+        this.clientes = new ArrayList<>();
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+}
+
+class Cliente {
+    private String nombre;
+    private int edad;
+
+    public Cliente(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", Edad: " + edad;
+    }
+}
+
 public class AtencionClientes {
 
     public static void main(String[] args) {
@@ -17,14 +66,14 @@ public class AtencionClientes {
             System.out.println("4. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
                     crearSublista(coleccionAnidada, scanner);
                     break;
                 case 2:
-                    agregarValoresSublista(coleccionAnidada, scanner);
+                    agregarClientesSublista(coleccionAnidada, scanner);
                     break;
                 case 3:
                     mostrarColeccion(coleccionAnidada);
@@ -49,7 +98,7 @@ public class AtencionClientes {
         System.out.println("Nuevo Area '" + area + "' creada.");
     }
 
-    public static void agregarValoresSublista(List<Sublista> coleccionAnidada, Scanner scanner) {
+    public static void agregarClientesSublista(List<Sublista> coleccionAnidada, Scanner scanner) {
         if (coleccionAnidada.isEmpty()) {
             System.out.println("No hay Areas creadas. Cree un Area primero.");
             return;
@@ -70,18 +119,26 @@ public class AtencionClientes {
 
         Sublista sublista = coleccionAnidada.get(sublistaSeleccionada - 1);
 
-        System.out.println("Ingrese Clientes Para un Area '" + sublista.getArea() + "' (escriba 'salir' para terminar):");
-        String input;
+        System.out.println("Ingrese los datos del Cliente para el Area '" + sublista.getArea() + "' (escriba 'salir' para terminar):");
+
         while (true) {
-            System.out.print("Valor: ");
-            input = scanner.nextLine();
-            if (input.equalsIgnoreCase("salir")) {
+            System.out.print("Nombre del Cliente: ");
+            String nombre = scanner.nextLine();
+            if (nombre.equalsIgnoreCase("salir")) {
                 break;
             }
-            sublista.getClientes().add(input);  // Añadiendo el valor a la sublista seleccionada
+
+            System.out.print("Edad del Cliente: ");
+            int edad = scanner.nextInt();
+            scanner.nextLine(); 
+
+            Cliente cliente = new Cliente(nombre, edad);
+            sublista.getClientes().add(cliente);
+
+            System.out.println("Cliente agregado: " + cliente);
         }
 
-        System.out.println("Valores agregados a la sublista '" + sublista.getArea() + "'.");
+        System.out.println("Clientes agregados al Area '" + sublista.getArea() + "'.");
     }
 
     public static void mostrarColeccion(List<Sublista> coleccionAnidada) {
@@ -90,27 +147,12 @@ public class AtencionClientes {
         } else {
             System.out.println("Lista de Clientes Por Cada Area:");
             for (Sublista sublista : coleccionAnidada) {
-                System.out.println("Sublista '" + sublista.getArea() + "': " + sublista.getClientes());
+                System.out.println("Area '" + sublista.getArea() + "':");
+                for (Cliente cliente : sublista.getClientes()) {
+                    System.out.println(cliente);
+                }
             }
         }
-    }
-}
-
-class Sublista {
-    private String Area;
-    private List<Object> valores;
-
-    public Sublista(String Area) {
-        this.Area = Area;
-        this.valores = new ArrayList<>();
-    }
-
-    public String getArea() {
-        return Area;
-    }
-
-    public List<Object> getClientes() {
-        return valores;
     }
 }
     
