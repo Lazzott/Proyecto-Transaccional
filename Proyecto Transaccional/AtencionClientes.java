@@ -103,6 +103,7 @@ public class AtencionClientes {
         int opcion;
 
         do {
+            Utilidades.limpiarPantalla();
             System.out.println("Menú:");
             System.out.println("1. Crear Area de Atención");
             System.out.println("2. Crear Area con Clientes Iniciales");
@@ -116,22 +117,34 @@ public class AtencionClientes {
 
             switch (opcion) {
                 case 1:
+                    Utilidades.limpiarPantalla();
                     crearSublista(coleccionAnidada, scanner);
+                    Utilidades.presioneTeclaParaContinuar();
                     break;
                 case 2:
+                    Utilidades.limpiarPantalla();
                     crearSublista(coleccionAnidada, scanner, obtenerClientes(scanner));
+                    Utilidades.presioneTeclaParaContinuar();
                     break;
                 case 3:
+                    Utilidades.limpiarPantalla();
                     agregarClientesSublista(coleccionAnidada, scanner);
+                    Utilidades.presioneTeclaParaContinuar();
                     break;
                 case 4:
+                    Utilidades.limpiarPantalla();
                     mostrarColeccion(coleccionAnidada);
+                    Utilidades.presioneTeclaParaContinuar();
                     break;
                 case 5:
+                    Utilidades.limpiarPantalla();
                     mostrarColeccion(coleccionAnidada, scanner);
+                    Utilidades.presioneTeclaParaContinuar();
                     break;
                 case 6:
+                    Utilidades.limpiarPantalla();
                     System.out.println("Saliendo...");
+                    Utilidades.presioneTeclaParaContinuar();
                     break;
                 default:
                     System.out.println("Opción no válida. Intente nuevamente.");
@@ -270,5 +283,48 @@ public class AtencionClientes {
         for (Cliente cliente : sublista.getClientes()) {
             System.out.println(cliente);
         }
+    }
+}
+
+class Utilidades {
+    
+    // Métodos de la Clase
+    public static void limpiarPantalla() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
+    
+    public static String formatearRut(String rut) {
+        rut = rut.replace(".", "");
+        rut = rut.replace("-", "");
+        String rutFormateado = "";
+        int largo = rut.length();
+        //System.out.println(largo);
+        int contador = 0;
+        for (int i = largo - 1; i >= 0; i--) {
+            if (i == (largo - 1)) {
+                rutFormateado = rutFormateado + rut.charAt(i);
+                rutFormateado = "-" + rutFormateado;  
+            }
+            else {
+                rutFormateado =  rut.charAt(i) + rutFormateado;
+                contador++;
+            
+                if (contador == 3 && i != 0) {
+                    rutFormateado = "." + rutFormateado;
+                    contador = 0;
+                }
+            }
+        }
+        return rutFormateado;
+    }
+    
+    public static void presioneTeclaParaContinuar() {
+        Scanner scanner = new Scanner(System.in);
+        String enter;
+        System.out.println("Presione enter para continuar..");
+        //enter = scanner.nextLine();
+        enter = scanner.nextLine();
     }
 }
