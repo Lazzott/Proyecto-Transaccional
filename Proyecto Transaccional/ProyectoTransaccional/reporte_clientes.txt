@@ -1,0 +1,53 @@
+=== Estadísticas ===
+Total de clientes: 25
+Clientes en área 'Asuntos Medicos': 14
+Clientes en área 'Tramites Legales': 10
+Clientes en área 'Otros': 1
+
+
+=== Clientes por Área ===
+Área: Consultorio de Ginecología (Asuntos Medicos)
+Nombre: Tom Hanks, Edad: 31
+Nombre: Dwayne Johnson, Edad: 80
+Nombre: Tom Hanks, Edad: 61
+Nombre: Dwayne Johnson, Edad: 66
+
+Área: chirimoyas con caca (Asuntos Medicos)
+Nombre: chupete suazo, Edad: 23432
+
+Área: Hospital de Oftalmología (Otros)
+Nombre: Ryan Reynolds, Edad: 77
+
+Área: Hospital de Neurología (Asuntos Medicos)
+Nombre: Sofia Vergara, Edad: 71
+Nombre: Leonardo DiCaprio, Edad: 87
+Nombre: Ryan Reynolds, Edad: 20
+Nombre: Anne Hathaway, Edad: 42
+Nombre: Dwayne Johnson, Edad: 64
+Nombre: Ben Affleck, Edad: 69
+
+Área: Clínica de Fisioterapia (Tramites Legales)
+Nombre: Chris Evans, Edad: 40
+Nombre: Emma Stone, Edad: 53
+
+Área: Clínica de Cardiología (Asuntos Medicos)
+Nombre: Matthew McConaughey, Edad: 53
+Nombre: Tom Hanks, Edad: 26
+
+Área: Clínica de Nutrición (Asuntos Medicos)
+Nombre: Lupita Nyong'o, Edad: 48
+
+Área: Clínica de Odontología (Tramites Legales)
+Nombre: Leonardo DiCaprio, Edad: 33
+
+Área: Centro de Diagnóstico por Imagen (Tramites Legales)
+Nombre: Michael B. Jordan, Edad: 43
+Nombre: Kylie Jenner, Edad: 51
+
+Área: Centro de Cirugía Estética (Tramites Legales)
+Nombre: Emma Stone, Edad: 23
+
+Área: Centro de Salud Mental (Tramites Legales)
+Nombre: Ben Affleck, Edad: 58
+Nombre: Adam Driver, Edad: 35
+Nombre: D
